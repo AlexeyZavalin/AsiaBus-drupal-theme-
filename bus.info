@@ -1,0 +1,13 @@
+name = Bus
+description = Специальная тема
+package = Core
+version = VERSION
+core = 7.x
+
+stylesheets[all][] = plugins/swiper/css/swiper.min.css
+stylesheets[all][] = css/style.less
+
+scripts[] = plugins/swiper/js/swiper.min.js
+scripts[] = plugins/tcal.js
+scripts[] = js/script.js
+regions[content] = Содержимое

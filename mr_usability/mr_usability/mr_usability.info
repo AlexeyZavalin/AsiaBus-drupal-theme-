@@ -1,0 +1,5 @@
+name = MR Usability
+description = Пользовательский интерфейс
+core = 7.x
+package = MR
+version = 7.x-1.0

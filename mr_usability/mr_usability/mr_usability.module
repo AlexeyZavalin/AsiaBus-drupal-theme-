@@ -1,0 +1,25 @@
+<?php
+
+function mr_usability_permission() {
+    return array(
+        'hover edit' => array(
+            'title' => t('Use hover edit icon')
+        )
+    );
+}
+
+function mr_usability_preprocess_node(&$variables) {
+    if (user_access('hover edit')) {
+        $links = array(
+            base_path() . 'node/' . $variables['nid'] . '/edit' => t('Edit')
+        );
+        $nid = $variables['nid'];
+        $settings = array(
+            'nid' => $nid,
+            'links' => $links
+        );
+        drupal_add_js(array('mr_usability' => $settings), 'setting');
+        drupal_add_js(drupal_get_path('module', 'mr_usability') . '/mr_usability.js');
+        drupal_add_css(drupal_get_path('module', 'mr_usability') . '/mr_usability.css');
+    }
+}
